@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Vending Machine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Beginner AI prompt builder</p>
+      <h1 id="page-title">Prompt Vending Machine</h1>
+      <p class="promise">
+        Turn a rough question, task, or idea into a clearer prompt you can paste into an AI app.
+      </p>
+      <p class="notice">
+        Prompt Vending Machine helps you build better prompts for AI tools. It does not answer questions itself.
+        After you create a prompt here, use it in ChatGPT, Claude, Gemini, or another AI app.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="Prompt builder">
+      <form class="controls" id="prompt-form">
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category" name="category"></select>
+        </div>
+
+        <div class="field">
+          <label for="task">Goal or task</label>
+          <select id="task" name="task"></select>
+        </div>
+
+        <div class="field">
+          <label for="topic">Topic, question, or details</label>
+          <textarea
+            id="topic"
+            name="topic"
+            rows="5"
+            aria-describedby="topic-help topic-error"
+            placeholder="Example: photosynthesis, a resume summary, dinner for a busy week, a cozy library image"
+          ></textarea>
+          <p class="field-help" id="topic-help">Add a few words about what you want help prompting for.</p>
+          <p class="field-error" id="topic-error" role="alert"></p>
+        </div>
+
+        <button class="primary-action" type="submit">Dispense Prompt</button>
+      </form>
+
+      <section class="results" aria-live="polite" aria-label="Generated prompt results">
+        <div class="empty-state" id="empty-state">
+          <h2>Your prompt will appear here</h2>
+          <p>Choose a category, pick a task, add your topic or details, then dispense a prompt.</p>
+        </div>
+
+        <div class="result-panel hidden" id="result-panel">
+          <div class="result-header">
+            <h2>Ready to paste</h2>
+            <button class="copy-action" id="copy-button" type="button">Copy Prompt</button>
+          </div>
+
+          <div class="output-block">
+            <h3>Final prompt</h3>
+            <p id="final-prompt"></p>
+          </div>
+
+          <div class="output-block">
+            <h3>Simpler version</h3>
+            <p id="simple-prompt"></p>
+          </div>
+
+          <div class="output-block">
+            <h3>Why it works</h3>
+            <p id="why-text"></p>
+          </div>
+
+          <p class="copy-status" id="copy-status" role="status"></p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
