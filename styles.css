@@ -16,6 +16,7 @@
   --shadow: 0 28px 70px rgba(16, 32, 51, 0.2);
   --font-body: "Nunito", "Trebuchet MS", Arial, Helvetica, sans-serif;
   --font-display: "Righteous", "Trebuchet MS", Arial, Helvetica, sans-serif;
+  --font-title: "Limelight", "Righteous", "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -140,7 +141,7 @@ p {
 }
 
 .title-bar {
-  padding: 15px 18px;
+  padding: 14px 18px 16px;
   border: 2px solid #234a62;
   border-radius: 18px;
   color: #f8fbfd;
@@ -153,14 +154,16 @@ p {
 }
 
 h1 {
-  font-family: var(--font-display);
+  font-family: var(--font-title);
   font-weight: 400;
   margin-bottom: 0;
-  font-size: clamp(1.85rem, 5vw, 3.45rem);
-  line-height: 1.05;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.22);
+  font-size: clamp(2rem, 5.4vw, 3.75rem);
+  line-height: 0.98;
+  letter-spacing: 0.025em;
+  text-transform: none;
+  text-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.24),
+    0 0 18px rgba(100, 183, 213, 0.28);
 }
 
 .promise {
@@ -279,8 +282,8 @@ h1 {
 }
 
 .results {
-  min-height: 470px;
-  padding: 54px 22px 22px;
+  min-height: 430px;
+  padding: 48px 20px 20px;
 }
 
 .panel-cap {
@@ -446,22 +449,22 @@ a:focus-visible {
 
 .result-panel {
   display: grid;
-  gap: 15px;
+  gap: 12px;
 }
 
 .result-header {
   display: grid;
   grid-template-columns: minmax(180px, 1fr) minmax(260px, 320px);
-  gap: 16px;
+  gap: 12px;
   align-items: start;
 }
 
 .result-header h2 {
-  min-height: 54px;
+  min-height: 48px;
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  padding: 10px 16px;
+  padding: 8px 15px;
   border: 2px solid #254b61;
   border-radius: 16px;
   color: #dff7ff;
@@ -477,11 +480,11 @@ a:focus-visible {
 
 .result-actions {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .action-path {
-  padding: 12px;
+  padding: 10px 11px;
   border: 1px solid #97b0bd;
   border-radius: 16px;
   background:
@@ -490,7 +493,7 @@ a:focus-visible {
 }
 
 .action-path p {
-  margin-bottom: 9px;
+  margin-bottom: 7px;
   color: #42576a;
   font-size: 0.93rem;
   line-height: 1.35;
@@ -532,7 +535,7 @@ a:focus-visible {
 
 .output-block {
   position: relative;
-  padding: 17px;
+  padding: 14px 16px;
   border: 1px solid #a7bdc8;
   border-radius: 16px;
   background:
@@ -542,7 +545,7 @@ a:focus-visible {
 
 .output-block h3 {
   display: inline-flex;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   padding: 4px 9px;
   border-radius: 999px;
   color: #1e4f72;
@@ -653,8 +656,8 @@ a:focus-visible {
   }
 
   h1 {
-    font-size: clamp(1.55rem, 9vw, 2.25rem);
-    letter-spacing: 0.02em;
+    font-size: clamp(1.8rem, 9vw, 2.45rem);
+    letter-spacing: 0.01em;
   }
 
   .prompt-help-card {
