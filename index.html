@@ -9,7 +9,9 @@
 <body>
   <main class="app-shell">
     <section class="intro" aria-labelledby="page-title">
-      <h1 id="page-title">Prompt Vending Machine</h1>
+      <div class="title-bar">
+        <h1 id="page-title">Prompt Vending Machine</h1>
+      </div>
       <p class="promise">
         Turn your question, task, or idea into an organized prompt you can paste into an AI app.
       </p>
@@ -27,50 +29,34 @@
           <p>A prompt is what you type to tell an AI what you want.</p>
         </div>
       </div>
-      <p class="notice">
-        Prompt Vending Machine helps you build better prompts for AI tools. It does not answer questions itself.
-        After you create a prompt here, use it in ChatGPT, Claude, Gemini, or another AI app.
-      </p>
     </section>
 
     <section class="machine" aria-label="Prompt builder">
       <form class="controls" id="prompt-form">
-        <div class="step-row">
-          <span class="step-cue">Start here</span>
-          <div class="field">
-            <label for="category">Category</label>
-            <select id="category" name="category"></select>
-          </div>
+        <div class="field">
+          <label for="category">Choose a Category</label>
+          <select id="category" name="category"></select>
         </div>
 
-        <div class="step-row">
-          <span class="step-cue">Next</span>
-          <div class="field">
-            <label for="task">Goal or task</label>
-            <select id="task" name="task"></select>
-          </div>
+        <div class="field">
+          <label for="task">Choose a Goal or Task</label>
+          <select id="task" name="task"></select>
         </div>
 
-        <div class="step-row">
-          <span class="step-cue">Then</span>
-          <div class="field">
-            <label for="topic">Topic, question, or details</label>
-            <textarea
-              id="topic"
-              name="topic"
-              rows="5"
-              aria-describedby="topic-help topic-error"
-              placeholder="Example: photosynthesis, a resume summary, dinner for a busy week, a cozy library image"
-            ></textarea>
-            <p class="field-help" id="topic-help">Type your topic, question, or idea here.</p>
-            <p class="field-error" id="topic-error" role="alert"></p>
-          </div>
+        <div class="field">
+          <label for="topic">Type a Topic, Question, or Details</label>
+          <textarea
+            id="topic"
+            name="topic"
+            rows="5"
+            aria-describedby="topic-help topic-error"
+            placeholder="Example: photosynthesis, a resume summary, dinner for a busy week, a cozy library image"
+          ></textarea>
+          <p class="field-help" id="topic-help">Type your topic, question, or idea here.</p>
+          <p class="field-error" id="topic-error" role="alert"></p>
         </div>
 
-        <div class="step-row">
-          <span class="step-cue">Finally</span>
-          <button class="primary-action" type="submit">Dispense Prompt</button>
-        </div>
+        <button class="primary-action" type="submit">Dispense Prompt</button>
       </form>
 
       <section class="results" aria-live="polite" aria-label="Generated prompt results">
@@ -83,12 +69,18 @@
           <div class="result-header">
             <h2>Ready to paste</h2>
             <div class="result-actions">
-              <button class="copy-action" id="copy-button" type="button">Copy to Use in AI</button>
-              <nav class="ai-links hidden" id="ai-links" aria-label="Open an AI app">
-                <a id="chatgpt-link" href="https://chatgpt.com/">ChatGPT</a>
-                <a id="claude-link" href="https://claude.ai/">Claude</a>
-                <a id="gemini-link" href="https://gemini.google.com/app">Google Gemini</a>
-              </nav>
+              <div class="action-path copy-path">
+                <p>Your prompt is ready. Copy it and take it with you.</p>
+                <button class="copy-action" id="copy-button" type="button">Copy to Use in AI</button>
+              </div>
+              <div class="action-path ai-path hidden" id="ai-path">
+                <p>Or pick an AI app below to try it now.</p>
+                <nav class="ai-links" id="ai-links" aria-label="Open an AI app">
+                  <a id="chatgpt-link" href="https://chatgpt.com/">ChatGPT</a>
+                  <a id="claude-link" href="https://claude.ai/">Claude</a>
+                  <a id="gemini-link" href="https://gemini.google.com/app">Google Gemini</a>
+                </nav>
+              </div>
             </div>
           </div>
 
@@ -111,6 +103,13 @@
         </div>
       </section>
     </section>
+
+    <aside class="mission-note" aria-label="How to use this tool">
+      <p>
+        Console note: this machine builds prompts, not answers. Dispense one, then launch it in ChatGPT,
+        Claude, Google Gemini, or another AI app.
+      </p>
+    </aside>
   </main>
 
   <script src="script.js"></script>

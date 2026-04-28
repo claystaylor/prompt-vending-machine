@@ -131,12 +131,19 @@ const topicError = document.querySelector("#topic-error");
 const promptHelpButton = document.querySelector("#prompt-help-button");
 const promptHelpCard = document.querySelector("#prompt-help-card");
 const aiLinks = document.querySelector("#ai-links");
+const aiPath = document.querySelector("#ai-path");
 const chatgptLink = document.querySelector("#chatgpt-link");
 const claudeLink = document.querySelector("#claude-link");
 const geminiLink = document.querySelector("#gemini-link");
 
 function fillTemplate(template, topic) {
-  return template.replaceAll("{topic}", topic);
+  return template
+    .replaceAll("{topic}.", punctuateTopic(topic, "."))
+    .replaceAll("{topic}", topic);
+}
+
+function punctuateTopic(topic, fallbackMark) {
+  return /[.!?]$/.test(topic) ? topic : `${topic}${fallbackMark}`;
 }
 
 function getSelectedTask() {
@@ -186,7 +193,7 @@ function showPrompt() {
 
   emptyState.classList.add("hidden");
   resultPanel.classList.remove("hidden");
-  aiLinks.classList.remove("hidden");
+  aiPath.classList.remove("hidden");
 }
 
 function updateAiLinks(prompt) {
@@ -204,7 +211,7 @@ async function copyGeneratedPrompt() {
 
   try {
     await navigator.clipboard.writeText(finalPrompt.textContent);
-    copyStatus.textContent = "Copied to clipboard. Paste it into ChatGPT, Claude, Gemini, or another AI app.";
+    copyStatus.textContent = "Copied to clipboard. Paste it into ChatGPT, Claude, Google Gemini, or another AI app.";
   } catch (error) {
     copyStatus.textContent = "Copy failed. Select the final prompt and copy it manually.";
   }
