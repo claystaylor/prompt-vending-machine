@@ -8,99 +8,115 @@
 </head>
 <body>
   <main class="app-shell">
-    <section class="intro" aria-labelledby="page-title">
-      <div class="title-bar">
-        <h1 id="page-title">Prompt Vending Machine</h1>
-      </div>
-      <p class="promise">
-        Turn your question, task, or idea into an organized prompt you can paste into an AI app.
-      </p>
-      <div class="prompt-help">
-        <button
-          class="prompt-help-button"
-          id="prompt-help-button"
-          type="button"
-          aria-expanded="false"
-          aria-controls="prompt-help-card"
-        >
-          What is a prompt?
-        </button>
-        <div class="prompt-help-card hidden" id="prompt-help-card">
-          <p>A prompt is what you type to tell an AI what you want.</p>
+    <section class="machine-cabinet" aria-labelledby="page-title">
+      <section class="intro">
+        <div class="marquee">
+          <div class="marquee-lights" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="title-bar">
+            <h1 id="page-title">Prompt Vending Machine</h1>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="machine" aria-label="Prompt builder">
-      <form class="controls" id="prompt-form">
-        <div class="field">
-          <label for="category">Choose a Category</label>
-          <select id="category" name="category"></select>
+        <p class="promise">
+          Turn your question, task, or idea into an organized prompt you can paste into an AI app.
+        </p>
+        <div class="prompt-help">
+          <button
+            class="prompt-help-button"
+            id="prompt-help-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="prompt-help-card"
+          >
+            What is a prompt?
+          </button>
+          <div class="prompt-help-card hidden" id="prompt-help-card">
+            <p>A prompt is what you type to tell an AI what you want.</p>
+          </div>
         </div>
+      </section>
 
-        <div class="field">
-          <label for="task">Choose a Goal or Task</label>
-          <select id="task" name="task"></select>
-        </div>
+      <section class="machine" aria-label="Prompt builder">
+        <form class="controls" id="prompt-form">
+          <div class="panel-cap">
+            <span>Control Panel</span>
+          </div>
 
-        <div class="field">
-          <label for="topic">Type a Topic, Question, or Details</label>
-          <textarea
-            id="topic"
-            name="topic"
-            rows="5"
-            aria-describedby="topic-help topic-error"
-            placeholder="Example: photosynthesis, a resume summary, dinner for a busy week, a cozy library image"
-          ></textarea>
-          <p class="field-help" id="topic-help">Type your topic, question, or idea here.</p>
-          <p class="field-error" id="topic-error" role="alert"></p>
-        </div>
+          <div class="field">
+            <label for="category">Choose a Category</label>
+            <select id="category" name="category"></select>
+          </div>
 
-        <button class="primary-action" type="submit">Dispense Prompt</button>
-      </form>
+          <div class="field">
+            <label for="task">Choose a Goal or Task</label>
+            <select id="task" name="task"></select>
+          </div>
 
-      <section class="results" aria-live="polite" aria-label="Generated prompt results">
-        <div class="empty-state" id="empty-state">
-          <h2>Your prompt will appear here</h2>
-          <p>Choose a category, pick a task, add your topic or details, then dispense a prompt.</p>
-        </div>
+          <div class="field">
+            <label for="topic">Type a Topic, Question, or Details</label>
+            <textarea
+              id="topic"
+              name="topic"
+              rows="5"
+              aria-describedby="topic-help topic-error"
+              placeholder="Example: photosynthesis, a resume summary, dinner for a busy week, a cozy library image"
+            ></textarea>
+            <p class="field-help" id="topic-help">Type your topic, question, or idea here.</p>
+            <p class="field-error" id="topic-error" role="alert"></p>
+          </div>
 
-        <div class="result-panel hidden" id="result-panel">
-          <div class="result-header">
-            <h2>Ready to paste</h2>
-            <div class="result-actions">
-              <div class="action-path copy-path">
-                <p>Your prompt is ready. Copy it and take it with you.</p>
-                <button class="copy-action" id="copy-button" type="button">Copy to Use in AI</button>
-              </div>
-              <div class="action-path ai-path hidden" id="ai-path">
-                <p>Or pick an AI app below to try it now.</p>
-                <nav class="ai-links" id="ai-links" aria-label="Open an AI app">
-                  <a id="chatgpt-link" href="https://chatgpt.com/">ChatGPT</a>
-                  <a id="claude-link" href="https://claude.ai/">Claude</a>
-                  <a id="gemini-link" href="https://gemini.google.com/app">Google Gemini</a>
-                </nav>
+          <button class="primary-action" type="submit">Dispense Prompt</button>
+        </form>
+
+        <section class="results" aria-live="polite" aria-label="Generated prompt results">
+          <div class="panel-cap output-cap">
+            <span>Dispense Window</span>
+          </div>
+          <div class="empty-state" id="empty-state">
+            <h2>Your prompt will appear here</h2>
+            <p>Choose a category, pick a task, add your topic or details, then dispense a prompt.</p>
+          </div>
+
+          <div class="result-panel hidden" id="result-panel">
+            <div class="result-header">
+              <h2>Ready to paste</h2>
+              <div class="result-actions">
+                <div class="action-path copy-path">
+                  <p>Your prompt is ready. Copy it and take it with you.</p>
+                  <button class="copy-action" id="copy-button" type="button">Copy to Use in AI</button>
+                </div>
+                <div class="action-path ai-path hidden" id="ai-path">
+                  <p>Or pick an AI app below to try it now.</p>
+                  <nav class="ai-links" id="ai-links" aria-label="Open an AI app">
+                    <a id="chatgpt-link" href="https://chatgpt.com/">ChatGPT</a>
+                    <a id="claude-link" href="https://claude.ai/">Claude</a>
+                    <a id="gemini-link" href="https://gemini.google.com/app">Google Gemini</a>
+                  </nav>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="output-block">
-            <h3>Final prompt</h3>
-            <p id="final-prompt"></p>
-          </div>
+            <div class="output-block final-output">
+              <h3>Final prompt</h3>
+              <p id="final-prompt"></p>
+            </div>
 
-          <div class="output-block">
-            <h3>Simpler version</h3>
-            <p id="simple-prompt"></p>
-          </div>
+            <div class="output-block">
+              <h3>Simpler version</h3>
+              <p id="simple-prompt"></p>
+            </div>
 
-          <div class="output-block">
-            <h3>Why it works</h3>
-            <p id="why-text"></p>
-          </div>
+            <div class="output-block">
+              <h3>Why it works</h3>
+              <p id="why-text"></p>
+            </div>
 
-          <p class="copy-status" id="copy-status" role="status"></p>
-        </div>
+            <p class="copy-status" id="copy-status" role="status"></p>
+          </div>
+        </section>
       </section>
     </section>
 
