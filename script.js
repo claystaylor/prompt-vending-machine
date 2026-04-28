@@ -128,6 +128,12 @@ const whyText = document.querySelector("#why-text");
 const copyButton = document.querySelector("#copy-button");
 const copyStatus = document.querySelector("#copy-status");
 const topicError = document.querySelector("#topic-error");
+const promptHelpButton = document.querySelector("#prompt-help-button");
+const promptHelpCard = document.querySelector("#prompt-help-card");
+const aiLinks = document.querySelector("#ai-links");
+const chatgptLink = document.querySelector("#chatgpt-link");
+const claudeLink = document.querySelector("#claude-link");
+const geminiLink = document.querySelector("#gemini-link");
 
 function fillTemplate(template, topic) {
   return template.replaceAll("{topic}", topic);
@@ -173,12 +179,22 @@ function showPrompt() {
   finalPrompt.textContent = fillTemplate(task.final, topic);
   simplePrompt.textContent = fillTemplate(task.simple, topic);
   whyText.textContent = task.why;
+  updateAiLinks(finalPrompt.textContent);
   topicError.textContent = "";
   topicInput.removeAttribute("aria-invalid");
   copyStatus.textContent = "";
 
   emptyState.classList.add("hidden");
   resultPanel.classList.remove("hidden");
+  aiLinks.classList.remove("hidden");
+}
+
+function updateAiLinks(prompt) {
+  const encodedPrompt = encodeURIComponent(prompt);
+
+  chatgptLink.href = `https://chatgpt.com/?q=${encodedPrompt}`;
+  claudeLink.href = `https://claude.ai/new?q=${encodedPrompt}`;
+  geminiLink.href = `https://gemini.google.com/app?text=${encodedPrompt}`;
 }
 
 async function copyGeneratedPrompt() {
@@ -212,6 +228,23 @@ topicInput.addEventListener("input", () => {
 });
 
 copyButton.addEventListener("click", copyGeneratedPrompt);
+
+promptHelpButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+  const isOpen = !promptHelpCard.classList.contains("hidden");
+
+  promptHelpCard.classList.toggle("hidden", isOpen);
+  promptHelpButton.setAttribute("aria-expanded", String(!isOpen));
+});
+
+document.addEventListener("click", (event) => {
+  const clickedHelp = promptHelpButton.contains(event.target) || promptHelpCard.contains(event.target);
+
+  if (!clickedHelp) {
+    promptHelpCard.classList.add("hidden");
+    promptHelpButton.setAttribute("aria-expanded", "false");
+  }
+});
 
 populateCategories();
 populateTasks();
