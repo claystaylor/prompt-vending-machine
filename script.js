@@ -96,15 +96,15 @@ const promptData = {
     tasks: {
       realistic: {
         label: "Realistic image prompt",
-        final: "Create a realistic image prompt for {topic}. Include the main subject, setting, lighting, mood, colors, camera angle, and important details to include or avoid.",
-        simple: "Make a realistic image prompt for {topic}.",
-        why: "This works because image tools need visual details like subject, setting, lighting, mood, and composition."
+        final: "A realistic photo of {topic} in a believable everyday setting, natural lighting, calm polished mood, warm balanced colors, photographed from a slightly low angle with a 50mm lens, shallow depth of field, crisp photorealistic detail, natural textures, clean composition, no text, no watermark.",
+        simple: "A realistic photo of {topic} in natural light, warm balanced colors, clean composition, photorealistic detail, no text or watermark.",
+        why: "This works because it gives the image tool a subject, setting, lighting, mood, color direction, camera framing, and exclusions in one ready-to-use prompt."
       },
       illustration: {
         label: "Illustration prompt",
-        final: "Create an illustration prompt for {topic}. Describe the subject, art style, color palette, background, mood, and 3 specific visual details that should appear in the image.",
-        simple: "Make an illustration prompt for {topic}.",
-        why: "This works because it gives the image tool style direction plus concrete visual details."
+        final: "A charming storybook-style illustration of {topic} in a cozy detailed setting, warm pastel color palette, gentle soft light, playful but peaceful mood, expressive shapes, small texture details, layered background elements, balanced centered composition, clean edges, no text, no watermark.",
+        simple: "A cozy storybook illustration of {topic}, warm pastel colors, soft light, playful peaceful mood, simple detailed background, no text or watermark.",
+        why: "This works because it gives the image tool a clear subject, illustration style, color palette, setting, mood, composition, and exclusions in one ready-to-use prompt."
       },
       refine: {
         label: "Improve an image idea",
