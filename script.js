@@ -201,7 +201,7 @@ function updateAiLinks(prompt) {
 
   chatgptLink.href = `https://chatgpt.com/?q=${encodedPrompt}`;
   claudeLink.href = `https://claude.ai/new?q=${encodedPrompt}`;
-  geminiLink.href = `https://gemini.google.com/app?text=${encodedPrompt}`;
+  geminiLink.href = "https://gemini.google.com/app";
 }
 
 async function copyGeneratedPrompt() {
