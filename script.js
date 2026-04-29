@@ -125,7 +125,8 @@ const resultPanel = document.querySelector("#result-panel");
 const finalPrompt = document.querySelector("#final-prompt");
 const simplePrompt = document.querySelector("#simple-prompt");
 const whyText = document.querySelector("#why-text");
-const copyButton = document.querySelector("#copy-button");
+const finalCopyButton = document.querySelector("#copy-final-button");
+const simpleCopyButton = document.querySelector("#copy-simple-button");
 const copyStatus = document.querySelector("#copy-status");
 const topicError = document.querySelector("#topic-error");
 const promptHelpButton = document.querySelector("#prompt-help-button");
@@ -190,6 +191,8 @@ function showPrompt() {
   topicError.textContent = "";
   topicInput.removeAttribute("aria-invalid");
   copyStatus.textContent = "";
+  finalCopyButton.textContent = "Copy";
+  simpleCopyButton.textContent = "Copy";
 
   emptyState.classList.add("hidden");
   resultPanel.classList.remove("hidden");
@@ -204,16 +207,20 @@ function updateAiLinks(prompt) {
   geminiLink.href = "https://gemini.google.com/app";
 }
 
-async function copyGeneratedPrompt() {
-  if (!finalPrompt.textContent) {
+async function copyPromptText(promptElement, button) {
+  if (!promptElement.textContent) {
     return;
   }
 
   try {
-    await navigator.clipboard.writeText(finalPrompt.textContent);
+    await navigator.clipboard.writeText(promptElement.textContent);
+    button.textContent = "Copied";
     copyStatus.textContent = "Copied to clipboard. Paste it into ChatGPT, Claude, Google Gemini, or another AI app.";
+    window.setTimeout(() => {
+      button.textContent = "Copy";
+    }, 1600);
   } catch (error) {
-    copyStatus.textContent = "Copy failed. Select the final prompt and copy it manually.";
+    copyStatus.textContent = "Copy failed. Select the prompt text and copy it manually.";
   }
 }
 
@@ -234,7 +241,13 @@ topicInput.addEventListener("input", () => {
   }
 });
 
-copyButton.addEventListener("click", copyGeneratedPrompt);
+finalCopyButton.addEventListener("click", () => {
+  copyPromptText(finalPrompt, finalCopyButton);
+});
+
+simpleCopyButton.addEventListener("click", () => {
+  copyPromptText(simplePrompt, simpleCopyButton);
+});
 
 promptHelpButton.addEventListener("click", (event) => {
   event.stopPropagation();
