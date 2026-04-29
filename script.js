@@ -108,9 +108,9 @@ const promptData = {
       },
       refine: {
         label: "Improve an image idea",
-        final: "Improve this image idea: {topic}. Turn it into a stronger image-generation prompt with a clear subject, composition, style, lighting, background, and details to avoid.",
-        simple: "Improve my image prompt idea: {topic}.",
-        why: "This works because it upgrades a rough idea into specific visual instructions an image tool can follow."
+        final: "A realistic image featuring {topic} as a complete polished scene, clear main subject and setting, balanced composition viewed from a slightly low angle, warm natural lighting, peaceful refined mood, natural balanced colors, crisp realistic detail, rich textures, subtle background elements, clean visual focus, no text, no watermark.",
+        simple: "A realistic image featuring {topic}, warm natural light, peaceful mood, natural colors, clear composition, realistic detail, no text or watermark.",
+        why: "This works because it turns the rough idea into a complete visual scene with a clear subject, setting, lighting, mood, composition, specific details, and exclusions."
       }
     }
   }
