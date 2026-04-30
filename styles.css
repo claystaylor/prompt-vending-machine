@@ -412,9 +412,7 @@ a:focus-visible {
   padding: 0 22px;
   border-color: #924b3e;
   color: #fff8ea;
-  background:
-    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.32), transparent 32%),
-    linear-gradient(180deg, #d9856e 0%, var(--coral) 54%, #a64f40 100%);
+  background: #811112;
   font-size: 1.06rem;
   font-weight: 900;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
@@ -433,9 +431,7 @@ a:focus-visible {
 
 .primary-action:hover,
 .primary-action:focus-visible {
-  background:
-    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.34), transparent 32%),
-    linear-gradient(180deg, #e09078 0%, #bd604f 58%, #924539 100%);
+  background: #811112;
 }
 
 .prompt-help-button:hover,
