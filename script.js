@@ -143,6 +143,10 @@ function fillTemplate(template, topic) {
     .replaceAll("{topic}", topic);
 }
 
+function cleanTopicInput(input) {
+  return input.trim().replace(/[?!.,;:]+$/g, "").trim();
+}
+
 function punctuateTopic(topic, fallbackMark) {
   return /[.!?]$/.test(topic) ? topic : `${topic}${fallbackMark}`;
 }
@@ -174,7 +178,7 @@ function populateTasks() {
 }
 
 function showPrompt() {
-  const topic = topicInput.value.trim();
+  const topic = cleanTopicInput(topicInput.value);
   const task = getSelectedTask();
 
   if (!topic) {
