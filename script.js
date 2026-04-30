@@ -144,7 +144,13 @@ function fillTemplate(template, topic) {
 }
 
 function cleanTopicInput(input) {
-  return normalizeTopicPhrase(input.trim().replace(/[?!.,;:]+$/g, "").trim());
+  const topic = input.trim().replace(/[?!.,;:]+$/g, "").trim();
+
+  return normalizeTopicPhrase(removeLeadingTopicFiller(topic));
+}
+
+function removeLeadingTopicFiller(topic) {
+  return topic.replace(/^(for|about|on|regarding)\s+/i, "").trim();
 }
 
 function normalizeTopicPhrase(topic) {
