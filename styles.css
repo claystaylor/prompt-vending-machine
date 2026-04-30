@@ -214,9 +214,13 @@ h1 {
 .prompt-help-card {
   position: absolute;
   z-index: 100;
+  top: auto;
   bottom: calc(100% + 14px);
+  inset-block-start: auto;
+  inset-block-end: calc(100% + 14px);
   left: 50%;
   width: min(340px, calc(100vw - 48px));
+  max-width: calc(100vw - 48px);
   padding: 16px 18px;
   border: 1px solid #7fa3b3;
   border-radius: 14px;
@@ -224,12 +228,16 @@ h1 {
   background: linear-gradient(180deg, #fffdf7, #f3ead8);
   box-shadow: 0 16px 34px rgba(16, 32, 51, 0.2);
   transform: translateX(-50%);
+  overflow-wrap: break-word;
 }
 
 .prompt-help-card::before {
   content: "";
   position: absolute;
+  top: auto;
   bottom: -8px;
+  inset-block-start: auto;
+  inset-block-end: -8px;
   left: 50%;
   width: 14px;
   height: 14px;
