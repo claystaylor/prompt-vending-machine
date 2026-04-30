@@ -33,9 +33,9 @@ const promptData = {
       },
       summarize: {
         label: "Summarize information",
-        final: "Summarize {topic} for a busy coworker. Use plain language, highlight the most important points, and end with any decisions or action items.",
-        simple: "Summarize {topic} for work.",
-        why: "This works because it tells the AI who the summary is for and what details matter most."
+        final: "Summarize {topic}. Use plain language, highlight the most important points, and end with any decisions or action items.",
+        simple: "Summarize {topic}.",
+        why: "This works because it tells the AI what to summarize and what details matter most."
       },
       plan: {
         label: "Make a work plan",
