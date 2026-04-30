@@ -87,27 +87,22 @@
           <div class="result-panel hidden" id="result-panel">
             <div class="result-header">
               <div class="result-actions ai-path hidden" id="ai-path">
-                <p>Copy the prompt you want, then open an AI app below.</p>
-                <nav class="ai-links" id="ai-links" aria-label="Open an AI app">
-                  <a id="chatgpt-link" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a>
-                  <a id="claude-link" href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude</a>
-                  <a id="gemini-link" href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer">Google Gemini</a>
-                </nav>
+                <p>Click Copy on the prompt you want: Full Prompt or Simpler Prompt.</p>
               </div>
             </div>
 
             <div class="output-block final-output">
               <div class="output-title-row">
-                <h3>Final prompt</h3>
-                <button class="section-copy-button" id="copy-final-button" type="button" aria-label="Copy final prompt">Copy</button>
+                <h3>Full Prompt</h3>
+                <button class="section-copy-button" id="copy-final-button" type="button" aria-label="Copy full prompt">Copy</button>
               </div>
               <p id="final-prompt"></p>
             </div>
 
             <div class="output-block">
               <div class="output-title-row">
-                <h3>Simpler version</h3>
-                <button class="section-copy-button" id="copy-simple-button" type="button" aria-label="Copy simpler version">Copy</button>
+                <h3>Simpler Prompt</h3>
+                <button class="section-copy-button" id="copy-simple-button" type="button" aria-label="Copy simpler prompt">Copy</button>
               </div>
               <p id="simple-prompt"></p>
             </div>
@@ -117,7 +112,14 @@
               <p id="why-text"></p>
             </div>
 
-            <p class="copy-status" id="copy-status" role="status"></p>
+            <div class="copy-success hidden" id="copy-success">
+              <p class="copy-status" id="copy-status" role="status"></p>
+              <nav class="ai-links hidden" id="ai-links" aria-label="Open an AI app">
+                <a id="chatgpt-link" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a>
+                <a id="claude-link" href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude</a>
+                <a id="gemini-link" href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer">Google Gemini</a>
+              </nav>
+            </div>
           </div>
         </section>
       </section>

@@ -598,7 +598,10 @@ a:focus-visible {
   font-size: 1.03rem;
 }
 
-.copy-status {
+.copy-success {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
   min-height: 34px;
   margin-bottom: 0;
   padding: 9px 11px;
@@ -609,11 +612,10 @@ a:focus-visible {
   font-weight: 800;
 }
 
-.copy-status:empty {
-  min-height: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
+.copy-status {
+  margin-bottom: 0;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .mission-note {

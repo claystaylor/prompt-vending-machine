@@ -128,6 +128,7 @@ const whyText = document.querySelector("#why-text");
 const finalCopyButton = document.querySelector("#copy-final-button");
 const simpleCopyButton = document.querySelector("#copy-simple-button");
 const copyStatus = document.querySelector("#copy-status");
+const copySuccess = document.querySelector("#copy-success");
 const topicError = document.querySelector("#topic-error");
 const promptHelpButton = document.querySelector("#prompt-help-button");
 const promptHelpCard = document.querySelector("#prompt-help-card");
@@ -207,10 +208,11 @@ function showPrompt() {
   finalPrompt.textContent = fillTemplate(task.final, topic);
   simplePrompt.textContent = fillTemplate(task.simple, topic);
   whyText.textContent = task.why;
-  updateAiLinks(finalPrompt.textContent);
   topicError.textContent = "";
   topicInput.removeAttribute("aria-invalid");
   copyStatus.textContent = "";
+  copySuccess.classList.add("hidden");
+  aiLinks.classList.add("hidden");
   finalCopyButton.textContent = "Copy";
   simpleCopyButton.textContent = "Copy";
 
@@ -236,17 +238,24 @@ async function copyPromptText(promptElement, button) {
     await navigator.clipboard.writeText(promptElement.textContent);
     button.textContent = "Copied";
     copyStatus.textContent = "Copied to clipboard. Paste it into ChatGPT, Claude, Google Gemini, or another AI app.";
+    updateAiLinks(promptElement.textContent);
+    copySuccess.classList.remove("hidden");
+    aiLinks.classList.remove("hidden");
     window.setTimeout(() => {
       button.textContent = "Copy";
     }, 1600);
   } catch (error) {
     copyStatus.textContent = "Copy failed. Select the prompt text and copy it manually.";
+    copySuccess.classList.remove("hidden");
+    aiLinks.classList.add("hidden");
   }
 }
 
 categorySelect.addEventListener("change", () => {
   populateTasks();
   copyStatus.textContent = "";
+  copySuccess.classList.add("hidden");
+  aiLinks.classList.add("hidden");
 });
 
 form.addEventListener("submit", (event) => {
