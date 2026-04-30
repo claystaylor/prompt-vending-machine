@@ -40,6 +40,9 @@
             <p>A prompt is what you type to tell an AI what you want.</p>
           </div>
         </div>
+        <p class="intro-helper">
+          Choose a category, pick a task, add your topic or details, then dispense a prompt.
+        </p>
       </section>
 
       <section class="machine" aria-label="Prompt builder">
@@ -59,15 +62,14 @@
           </div>
 
           <div class="field">
-            <label for="topic">Type a Topic, Question, or Details</label>
+            <label for="topic">Type your topic, question, or idea here.</label>
             <textarea
               id="topic"
               name="topic"
               rows="5"
-              aria-describedby="topic-help topic-error"
+              aria-describedby="topic-error"
               placeholder="Example: photosynthesis, a resume summary, dinner for a busy week, a cozy library image"
             ></textarea>
-            <p class="field-help" id="topic-help">Type your topic, question, or idea here.</p>
             <p class="field-error" id="topic-error" role="alert"></p>
           </div>
 
@@ -80,7 +82,6 @@
           </div>
           <div class="empty-state" id="empty-state">
             <h2>Your prompt will appear here</h2>
-            <p>Choose a category, pick a task, add your topic or details, then dispense a prompt.</p>
           </div>
 
           <div class="result-panel hidden" id="result-panel">
@@ -124,7 +125,7 @@
 
     <aside class="mission-note" aria-label="How to use this tool">
       <p>
-        Console note: this machine builds prompts, not answers. Dispense one, then launch it in ChatGPT,
+        Console note: This machine builds prompts, not answers. Dispense one, then launch it in ChatGPT,
         Claude, Google Gemini, or another AI app.
       </p>
     </aside>
