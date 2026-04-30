@@ -144,7 +144,17 @@ function fillTemplate(template, topic) {
 }
 
 function cleanTopicInput(input) {
-  return input.trim().replace(/[?!.,;:]+$/g, "").trim();
+  return normalizeTopicPhrase(input.trim().replace(/[?!.,;:]+$/g, "").trim());
+}
+
+function normalizeTopicPhrase(topic) {
+  return topic
+    .replace(/^how does (.+) work$/i, "how $1 works")
+    .replace(/^how do (.+) work$/i, "how $1 work")
+    .replace(/^how is (.+) used$/i, "how $1 is used")
+    .replace(/^what is (.+)$/i, "$1")
+    .replace(/^what are (.+)$/i, "$1")
+    .trim();
 }
 
 function punctuateTopic(topic, fallbackMark) {
