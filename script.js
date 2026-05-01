@@ -237,7 +237,7 @@ async function copyPromptText(promptElement, button) {
   try {
     await navigator.clipboard.writeText(promptElement.textContent);
     button.textContent = "Copied";
-    copyStatus.textContent = "Copied to clipboard. Paste it into ChatGPT, Claude, Google Gemini, or another AI chatbot.";
+    copyStatus.textContent = "Copied to clipboard. Paste it into ChatGPT, Claude, Google Gemini, or another AI app.";
     updateAiLinks(promptElement.textContent);
     copySuccess.classList.remove("hidden");
     aiLinks.classList.remove("hidden");
