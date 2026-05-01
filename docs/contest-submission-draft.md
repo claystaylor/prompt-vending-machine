@@ -17,9 +17,9 @@ Prompt Vending Machine helps beginners turn rough questions, tasks, or ideas int
 2. User chooses a goal/task
 3. User enters topic/details
 4. User clicks **Dispense Prompt**
-5. Website shows final prompt, simpler version, and why it works
-6. User copies either the Final Prompt or Simpler Version
-7. User opens ChatGPT, Claude, Google Gemini, or another AI app in a new tab and pastes the prompt there
+5. Website shows Full Prompt, Simpler Prompt, and Why It Works
+6. User copies either the longer, more complete Full Prompt or the shorter, easier Simpler Prompt
+7. AI app buttons appear after copying so the user can open ChatGPT, Claude, Google Gemini, or another AI app in a new tab and paste the prompt there
 
 ## How I Built It
 Built with Codex in VS Code, with ChatGPT used to help refine the scope, organize the workflow, and write better Codex prompts. Project files were managed through GitHub and deployed as a static site.

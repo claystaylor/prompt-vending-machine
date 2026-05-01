@@ -2,7 +2,7 @@
 
 Prompt Vending Machine is a beginner-friendly static website that helps people turn rough questions, tasks, or ideas into reusable prompts for AI tools.
 
-It is designed for students, professionals, writers, and everyday AI users who know what they want help with but are not sure how to phrase a strong prompt. The app builds prompts, not answers. After dispensing a prompt, users can copy it and launch ChatGPT, Claude, Google Gemini, or another AI app.
+It is designed for students, professionals, writers, and everyday AI users who know what they want help with but are not sure how to phrase a strong prompt. The app builds prompts, not answers. After dispensing a prompt, users can copy the Full Prompt or Simpler Prompt, then launch ChatGPT, Claude, Google Gemini, or another AI app.
 
 ## What Problem It Solves
 
@@ -14,8 +14,8 @@ New AI users often type vague requests and get weak, confusing, or incomplete re
 - Choose a goal/task within that category
 - Enter a topic, question, or details in plain language
 - Dispense a structured prompt
-- Copy either the Final Prompt or the Simpler Version
-- Open ChatGPT, Claude, or Google Gemini in a new tab
+- Copy either the Full Prompt or the Simpler Prompt
+- Open ChatGPT, Claude, or Google Gemini in a new tab after copying a prompt
 - Read Why It Works to understand the prompt structure
 - Clean rough topic input by trimming whitespace, removing awkward trailing punctuation, and smoothing simple question/filler phrasing
 
@@ -25,9 +25,9 @@ New AI users often type vague requests and get weak, confusing, or incomplete re
 2. Choose a goal or task.
 3. Type your topic, question, or details.
 4. Click **Dispense Prompt**.
-5. Review the Final Prompt, Simpler Version, and Why It Works.
-6. Copy the prompt you want.
-7. Open ChatGPT, Claude, Google Gemini, or another AI app and paste the prompt there.
+5. Review the Full Prompt, Simpler Prompt, and Why It Works.
+6. Copy the prompt you want: the longer, more complete Full Prompt or the shorter, easier Simpler Prompt.
+7. Use the AI app buttons that appear after copying to open ChatGPT, Claude, Google Gemini, or another AI app and paste the prompt there.
 
 ## Categories And Tasks
 
@@ -43,11 +43,11 @@ The site uses simple JavaScript templates. A user chooses a category, chooses a 
 
 The page then shows:
 
-- a Final Prompt
-- a Simpler Version
+- a Full Prompt with the longer, more complete prompt
+- a Simpler Prompt with the shorter, easier prompt
 - a short Why It Works explanation
-- copy buttons for the Final Prompt and Simpler Version
-- links to open ChatGPT, Claude, and Google Gemini in new tabs
+- separate copy buttons for the Full Prompt and Simpler Prompt
+- links to open ChatGPT, Claude, and Google Gemini in new tabs after a prompt is copied
 
 There are no API calls, accounts, backend services, databases, or live AI integrations. The generated output is predictable and template-based.
 
@@ -76,8 +76,8 @@ On Netlify, deploy the repository as a static site. No build command is required
 - Responsive layout for desktop and smaller screens
 - Template-based prompt generation
 - Topic cleanup for punctuation, simple question phrasing, and leading filler phrases
-- Separate copy buttons for Final Prompt and Simpler Version
-- AI app launch links that open in new tabs
+- Separate copy buttons for Full Prompt and Simpler Prompt
+- AI app launch links that appear after copying and open in new tabs
 
 ## Assumptions
 

@@ -10,7 +10,7 @@ People who are curious about AI, but do not yet understand how to ask it for wha
 Prompt Vending Machine helps beginners turn rough questions, tasks, or ideas into clearer reusable AI prompts while showing why the wording works.
 
 ## What It Is
-A beginner-friendly static website that guides users through a few simple choices, then generates a Final Prompt, a Simpler Version, and a Why It Works explanation. Users can copy either prompt and open ChatGPT, Claude, Google Gemini, or another AI tool in a new tab.
+A beginner-friendly static website that guides users through a few simple choices, then generates a Full Prompt, a Simpler Prompt, and a Why It Works explanation. Users can copy either prompt, then open ChatGPT, Claude, Google Gemini, or another AI tool in a new tab.
 
 ## What It Is Not
 Prompt Vending Machine is not an AI chatbot and does not answer questions itself. It helps users build better prompts for AI tools.
@@ -29,8 +29,8 @@ Help users move from a rough idea to a clearer prompt with guided choices, light
 - Choose a goal/task
 - Enter a topic, question, or details
 - Dispense a prompt
-- Copy the Final Prompt or Simpler Version
-- Open ChatGPT, Claude, or Google Gemini in a new tab
+- Copy the longer, more complete Full Prompt or the shorter, easier Simpler Prompt
+- Open ChatGPT, Claude, or Google Gemini in a new tab after copying a prompt
 - Read Why It Works to understand the prompt structure
 
 ## Platform Plan
