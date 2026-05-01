@@ -6,7 +6,7 @@ const promptData = {
         label: "Explain a topic",
         final: "Explain {topic} in simple terms for a beginner. Use clear examples, avoid complicated vocabulary, and end with 3 quick review questions.",
         simple: "Explain {topic} simply and give me 3 review questions.",
-        why: "This works because it gives the AI a topic, an audience level, a style, and a clear ending format."
+        why: "This works because it gives the AI chatbot a topic, an audience level, a style, and a clear ending format."
       },
       study: {
         label: "Make a study guide",
@@ -35,7 +35,7 @@ const promptData = {
         label: "Summarize information",
         final: "Summarize {topic}. Use plain language, highlight the most important points, and end with any decisions or action items.",
         simple: "Summarize {topic}.",
-        why: "This works because it tells the AI what to summarize and what details matter most."
+        why: "This works because it tells the AI chatbot what to summarize and what details matter most."
       },
       plan: {
         label: "Make a work plan",
@@ -58,13 +58,13 @@ const promptData = {
         label: "Improve a draft",
         final: "Help me improve a draft about {topic}. Focus on clarity, flow, and word choice. Suggest specific edits and explain why each change makes the writing stronger.",
         simple: "Help me improve my writing about {topic}.",
-        why: "This works because it tells the AI what kind of feedback to give and asks for reasons, not just corrections."
+        why: "This works because it tells the AI chatbot what kind of feedback to give and asks for reasons, not just corrections."
       },
       outline: {
         label: "Create an outline",
         final: "Create a clear writing outline for {topic}. Include a strong opening idea, 3 main sections, supporting points for each section, and a simple conclusion.",
         simple: "Make an outline for writing about {topic}.",
-        why: "This works because it gives the AI a structure to follow from beginning to end."
+        why: "This works because it gives the AI chatbot a structure to follow from beginning to end."
       }
     }
   },
@@ -75,7 +75,7 @@ const promptData = {
         label: "Compare options",
         final: "Help me compare options for {topic}. Use a simple table with pros, cons, cost or effort, and who each option is best for. End with a practical recommendation.",
         simple: "Compare my options for {topic}.",
-        why: "This works because it asks the AI to organize choices and explain which option fits best."
+        why: "This works because it asks the AI chatbot to organize choices and explain which option fits best."
       },
       plan: {
         label: "Plan something",
@@ -237,7 +237,7 @@ async function copyPromptText(promptElement, button) {
   try {
     await navigator.clipboard.writeText(promptElement.textContent);
     button.textContent = "Copied";
-    copyStatus.textContent = "Copied to clipboard. Paste it into ChatGPT, Claude, Google Gemini, or another AI app.";
+    copyStatus.textContent = "Copied to clipboard. Paste it into ChatGPT, Claude, Google Gemini, or another AI chatbot.";
     updateAiLinks(promptElement.textContent);
     copySuccess.classList.remove("hidden");
     aiLinks.classList.remove("hidden");
