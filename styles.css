@@ -219,7 +219,7 @@ h1 {
   inset-block-start: auto;
   inset-block-end: calc(100% + 14px);
   left: 50%;
-  width: min(340px, calc(100vw - 48px));
+  width: min(440px, calc(100vw - 48px));
   max-width: calc(100vw - 48px);
   padding: 16px 18px;
   border: 1px solid #7fa3b3;
